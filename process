@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+
+# Check if the VAULT_PASSWORD or ANSIBLE_VAULT_PASSWORD_FILE environment variable is set
+if [[ -z $VAULT_PASSWORD ]] && [[ -z $ANSIBLE_VAULT_PASSWORD_FILE ]]; then
+    echo "Either VAULT_PASSWORD or ANSIBLE_VAULT_PASSWORD_FILE environment variable must be set"
+    exit 1
+fi
+
+# Check if an argument is provided
+if [[ -z $1 ]]; then
+    echo "Please provide an argument: encrypt or decrypt"
+    exit 1
+fi
+
+# Directories to process
+if [[ -z $STOW_FOLDERS ]]; then
+    STOW_FOLDERS="aws,bash,bin,docker,kube,ssh"
+fi
+
+# Convert comma-separated string to array
+IFS=',' read -r -a dirs <<< "$STOW_FOLDERS"
+
+# Dotfiles directory
+if [[ -z $DOTFILES ]]; then
+    DOTFILES=$HOME/Privatespace/.dotfiles
+fi
+
+# Create a temporary password file if VAULT_PASSWORD is set
+if [[ -n $VAULT_PASSWORD ]]; then
+    password_file=$(mktemp)
+    echo "$VAULT_PASSWORD" > "$password_file"
+else
+    password_file="$ANSIBLE_VAULT_PASSWORD_FILE"
+fi
+
+
+# Process files
+for dir in "${dirs[@]}"; do
+    if [[ $1 == "encrypt" ]]; then
+        find "$DOTFILES/$dir" -type f -exec ansible-vault encrypt --vault-password-file "$password_file" --encrypt-vault-id default {} \;
+    elif [[ $1 == "decrypt" ]]; then
+        find "$DOTFILES/$dir" -type f -exec ansible-vault decrypt --vault-password-file "$password_file" {} \;
+    else
+        echo "Invalid argument: $1. Please provide encrypt or decrypt."
+        exit 1
+    fi
+done
+
+# Remove the temporary password file if it was created
+if [[ -n $VAULT_PASSWORD ]]; then
+    rm -f "$password_file"
+fi
+

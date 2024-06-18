@@ -1,16 +1,17 @@
-#!/usr/bin/env zsh
-# I am using zsh instead of bash.  I was having some troubles using bash with
-# arrays.  Didn't want to investigate, so I just did zsh
+#!/usr/bin/env bash
+
 pushd $DOTFILES
-for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
+
+# Convert comma-separated string to array
+IFS=','
+folders=($STOW_FOLDERS)
+unset IFS
+
+for folder in "${folders[@]}"
 do
     echo "stow $folder"
-    stow -D $folder
-    stow $folder
+    stow -D -t ~/ $folder
+    stow -t ~/ $folder
 done
-popd
 
-pushd ./netflix
-./stow
 popd
-
