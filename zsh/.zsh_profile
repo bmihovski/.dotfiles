@@ -10,7 +10,7 @@ export PYTHONBREAKPOINT="pudb.set_trace"
 export GIT_EDITOR=$VIM
 
 export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass.txt
-
+source "$HOME/.sdkman/bin/sdkman-init.sh"
 # Where should I put you?
 bindkey -s ^f "tmux-sessionizer\n"
 
