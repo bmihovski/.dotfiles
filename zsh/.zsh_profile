@@ -13,6 +13,6 @@ export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass.txt
 # Where should I put you?
 bindkey -s ^f "tmux-sessionizer\n"
 
-
+eval "$(zoxide init zsh --cmd cd)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
