@@ -1,2 +1,3 @@
 aws/.aws/cli/cache
 aws/.aws/sso/cache
+docker/.docker/config.json
