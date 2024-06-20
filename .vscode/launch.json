@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "request": "attach",
+      "name": "Attach to e2e-tests",
+      "hostName": "127.0.0.1",
+      "port": 5005,
+      "projectName": "reprocessing-e2e-tests",
+      "cwd": "${workspaceFolder}/reprocessing-e2e-tests"
+    }
+  ]
+}
