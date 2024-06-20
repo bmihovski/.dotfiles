@@ -1,0 +1,3 @@
+docker/.docker/config.json
+aws/.aws/sso/cache
+aws/.aws/cli/cache
