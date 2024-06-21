@@ -18,7 +18,7 @@ if [[ -z $STOW_FOLDERS ]]; then
 fi
 
 # Convert comma-separated string to array
-IFS=',' read -r -a dirs <<< "$STOW_FOLDERS"
+IFS=',' read -r -a dirs <<<"$STOW_FOLDERS"
 
 # Dotfiles directory
 if [[ -z $DOTFILES ]]; then
@@ -28,11 +28,10 @@ fi
 # Create a temporary password file if VAULT_PASSWORD is set
 if [[ -n $VAULT_PASSWORD ]]; then
     password_file=$(mktemp)
-    echo "$VAULT_PASSWORD" > "$password_file"
+    echo "$VAULT_PASSWORD" >"$password_file"
 else
     password_file="$ANSIBLE_VAULT_PASSWORD_FILE"
 fi
-
 
 # Process files
 for dir in "${dirs[@]}"; do
@@ -40,6 +39,9 @@ for dir in "${dirs[@]}"; do
         find "$DOTFILES/$dir" -type f -exec ansible-vault encrypt --vault-password-file "$password_file" --encrypt-vault-id default {} \;
     elif [[ $1 == "decrypt" ]]; then
         find "$DOTFILES/$dir" -type f -exec ansible-vault decrypt --vault-password-file "$password_file" {} \;
+        if [[ $dir == "bin" ]]; then
+            chmod +x -R "$DOTFILES/$dir"
+        fi
     else
         echo "Invalid argument: $1. Please provide encrypt or decrypt."
         exit 1
@@ -50,4 +52,3 @@ done
 if [[ -n $VAULT_PASSWORD ]]; then
     rm -f "$password_file"
 fi
-
