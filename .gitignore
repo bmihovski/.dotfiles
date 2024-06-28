@@ -1,3 +1,6 @@
 aws/.aws/cli/cache
 aws/.aws/sso/cache
 docker/.docker/config.json
+kube/.kube/cache
+kube/.kube/kubens
+kube/.kube/kubectx
