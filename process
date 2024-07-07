@@ -14,7 +14,7 @@ fi
 
 # Directories to process
 if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="aws,bash,bin,docker,kube,ssh"
+    STOW_FOLDERS="aws,bash,bin,docker,kube,ssh,butterfish"
 fi
 
 # Convert comma-separated string to array
