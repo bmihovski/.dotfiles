@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="aws,bash,bin,docker,fusuma,kube,nvim,ssh,starship,tmux,zsh,butterfish"
+    STOW_FOLDERS="aws,bash,bin,docker,fusuma,kube,nvim,ssh,starship,tmux,zsh,butterfish,testcontainers"
 fi
 
 if [[ -z $DOTFILES ]]; then
@@ -8,4 +8,3 @@ if [[ -z $DOTFILES ]]; then
 fi
 
 STOW_FOLDERS=$STOW_FOLDERS DOTFILES=$DOTFILES $DOTFILES/install
-
