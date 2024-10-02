@@ -33,7 +33,15 @@ export GIT_EDITOR=$VIM
 export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass.txt
 # Where should I put you?
 bindkey -s ^f "tmux-sessionizer\n"
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/share/bob/nvim-bin" ] ; then
+    PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+fi
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.cargo/bin" ] ; then
+    PATH="$HOME/.cargo/bin:$PATH"
+fi
 source <(fzf --zsh)
 eval "$(zoxide init zsh --cmd cd)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
