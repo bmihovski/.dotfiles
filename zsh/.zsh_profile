@@ -30,6 +30,7 @@ bindkey -s ^f "tmux-sessionizer\n"
 eval "$(zoxide init zsh --cmd cd)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
+eval "$(atuin init zsh)"
 source <(fzf --zsh)
 # Source .bash_aliases if it exists
 if [ -f ~/.bash_aliases ]; then
