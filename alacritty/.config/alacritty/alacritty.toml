@@ -25,3 +25,6 @@ style = "Italic"
 # family = "MesloLGS Nerd Font Mono"
 family = "JetBrainsMono Nerd Font"
 style = "Regular"
+
+[window]
+startup_mode = "Maximized"
