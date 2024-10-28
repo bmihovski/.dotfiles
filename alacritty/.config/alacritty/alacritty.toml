@@ -28,3 +28,11 @@ style = "Regular"
 
 [window]
 startup_mode = "Maximized"
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+save_to_clipboard = false
+
+[shell]
+program = "tmux"
+args = ["-u", "at"]
