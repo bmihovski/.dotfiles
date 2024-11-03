@@ -34,5 +34,29 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 save_to_clipboard = false
 
 [shell]
-program = "/usr/bin/bash"   # Use the command `whereis bash` or `which bash` to verify the location of your bash executable
-args = ["-l", "-c", "tmux has-session 2>/dev/null && tmux -u attach || tmux -u new"]
+program = "/usr/bin/bash" # Use the command `whereis bash` or `which bash` to verify the location of your bash executable
+args = [
+  "-l",
+  "-c",
+  "tmux has-session 2>/dev/null && tmux -u attach || tmux -u new",
+]
+
+[[hints.enabled]]
+command = "xdg-open"
+hyperlinks = true
+post_processing = true
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
+mouse = { enabled = true, mods = "None" }
+
+[[hints.enabled]]
+command = "google-chrome"
+post_processing = true
+regex = "(b/|cl/)[0-9]+"
+mouse = { enabled = true, mods = "None" }
+
+[[hints.enabled]]
+command = "google-chrome"
+post_processing = true
+regex = "go/[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
+mouse = { enabled = true, mods = "None" }
+
