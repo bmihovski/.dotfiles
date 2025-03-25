@@ -4,6 +4,7 @@ return {
   ["bluez5.enable-hw-volume"] = true,
   ["bluez5.hfphsp-backend"] = "native",
   ["bluez5.a2dp.ldac.quality"] = "hq",
+  ["bluez5.default.rate"] = 96000,
   ["bluez5.a2dp.aac.bitratemode"] = 5,
   ["bluez5.auto-connect"] = { "hfp_hf", "hsp_hs", "a2dp_sink" },
   ["bluez5.dummy-avrcp-player"] = true,
