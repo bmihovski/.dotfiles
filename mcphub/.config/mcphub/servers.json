@@ -1,0 +1,88 @@
+{
+  "mcpServers": {
+    "fetch": {
+      "args": [
+        "mcp-server-fetch"
+      ],
+      "disabled": false,
+      "command": "uvx"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "~/Workspace",
+        "~/Privatespace",
+        "~/.config/mcphub",
+        "~/.config/nvim"
+      ]
+    },
+    "git": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-git"
+      ]
+    },
+    "tavily-mcp": {
+      "disabled": false,
+      "command": "npx",
+      "env": {
+        "TAVILY_API_KEY": null
+      },
+      "args": [
+        "-y",
+        "tavily-mcp@0.1.4"
+      ],
+      "autoApprove": []
+    },
+    "vectorcode": {
+      "command": "vectorcode-mcp-server",
+      "args": []
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    },
+    "docker": {
+      "args": [
+        "docker-mcp"
+      ],
+      "command": "uvx"
+    },
+    "github": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "command": "npx"
+    },
+    "mcp-server-commands": {
+      "command": "npx",
+      "args": [
+        "mcp-server-commands"
+      ]
+    },
+    "jetbrains": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@jetbrains/mcp-proxy"
+      ]
+    },
+    "todoist": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@abhiz123/todoist-mcp-server"
+      ],
+      "env": {
+        "TODOIST_API_TOKEN": null
+      }
+    }
+  },
+  "nativeMCPServers": []
+}

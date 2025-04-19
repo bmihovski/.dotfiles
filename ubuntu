@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="alacritty,aws,bash,bin,blesh,clangd,docker,gradle,fusuma,kube,netrc,nvim,pipewire,rclone,ssh,starship,tmux,butterfish,testcontainers,vectorcode,wireplumber"
+    STOW_FOLDERS="alacritty,atuin,aws,bash,bin,blesh,butterfish,clangd,docker,gradle,fusuma,kube,k9s,lazydocker,lazygit,netrc,mcphub,nvim,rclone,ssh,starship,tmux,testcontainers,vectorcode,wireplumber,yazi"
 fi
 
 if [[ -z $DOTFILES ]]; then
