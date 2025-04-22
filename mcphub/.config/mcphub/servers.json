@@ -28,7 +28,7 @@
       "disabled": false,
       "command": "npx",
       "env": {
-        "TAVILY_API_KEY": null
+        "TAVILY_API_KEY": ""
       },
       "args": [
         "-y",
@@ -80,7 +80,7 @@
         "@abhiz123/todoist-mcp-server"
       ],
       "env": {
-        "TODOIST_API_TOKEN": null
+        "TODOIST_API_TOKEN": ""
       }
     }
   },
