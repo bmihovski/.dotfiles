@@ -82,6 +82,13 @@
       "env": {
         "TODOIST_API_TOKEN": ""
       }
+    },
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp"
+      ]
     }
   },
   "nativeMCPServers": []

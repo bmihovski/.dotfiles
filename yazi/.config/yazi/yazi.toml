@@ -1,4 +1,4 @@
-[manager]
+[mgr]
 linemode = "mtime"
 show_hidden = true
 show_symlink = true
@@ -17,7 +17,7 @@ max_width = 2000
 max_height = 1200
 wrap = "yes"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on   = [ "g", "i" ]
 run  = "plugin lazygit"
 desc = "run lazygit"
