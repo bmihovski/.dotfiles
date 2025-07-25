@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+if [[ -z $STOW_FOLDERS ]]; then
+    STOW_FOLDERS="alacritty,atuin,aws,bash,bin,clangd,docker,easyeffects,k9s,lazydocker,lazygit,mcphub,nvim,rclone,ssh,starship,tmux,yazi,zsh"
+fi
+
+if [[ -z $DOTFILES ]]; then
+    DOTFILES=$HOME/Privatespace/.dotfiles
+fi
+
+STOW_FOLDERS=$STOW_FOLDERS DOTFILES=$DOTFILES $DOTFILES/install

@@ -4,3 +4,4 @@ docker/.docker/config.json
 kube/.kube/cache
 kube/.kube/kubens
 kube/.kube/kubectx
+.DS_Store
