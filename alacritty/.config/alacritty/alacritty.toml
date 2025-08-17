@@ -3,7 +3,7 @@
 TERM = "xterm-256color"
 
 [font]
-size = 19.5
+size = 20
 
 # [font.bold]
 # family = "JetBrainsMono Nerd Font"
@@ -32,20 +32,22 @@ bold_italic.family = "OpenDyslexicM Nerd Font Mono"
 # style = "Regular"
 
 [window]
-startup_mode = "Maximized"
+startup_mode = "SimpleFullscreen"
 padding = { x = 5, y = 5 }
 blur = true
 decorations = "buttonless"
 dynamic_padding = false
 opacity = 0.9
+option_as_alt = "OnlyLeft"
 
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 save_to_clipboard = true
 
-[terminal.shell]
-program = "/opt/homebrew/bin/zsh"
-args = [
+[terminal]
+osc52 = "CopyPaste"
+shell.program = "/opt/homebrew/bin/zsh"
+shell.args = [
   "-l",
   "-c",
   "tmux has-session 2>/dev/null && tmux -u attach || tmux -u new",
