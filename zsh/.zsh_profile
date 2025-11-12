@@ -33,7 +33,8 @@ setopt auto_cd
 autoload -Uz compinit
 compinit
 # Ensure tmux uses 256 colors
-export TERM="xterm-256color"
+# export TERM="xterm-256color"
+export TERM="alacritty"
 
 # Fix for macOS terminal colors
 export CLICOLOR=1

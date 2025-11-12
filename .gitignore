@@ -8,3 +8,4 @@ kube/.kube/kubectx
 bin/.local/bin/vectorcode
 bin/.local/bin/vectorcode-mcp-server
 bin/.local/bin/vectorcode-server
+bin/.local/bin/hererocks

@@ -4,6 +4,7 @@ TERM = "xterm-256color"
 
 [font]
 size = 20
+# size = 16
 
 # [font.bold]
 # family = "JetBrainsMono Nerd Font"
@@ -129,7 +130,7 @@ bindings = [
 
   { chars = "\u0002c", key = "T", mods = "Command" },
   { key = "Key7", chars = "\u0002&", mods = "Command|Alt" }, # Kill the current window.
-  { key = "R", chars = "\u0002,", mods = "Command|Shift" },  # Rename the current window.
+  # { key = "R", chars = "\u0002,", mods = "Command|Shift" },  # Rename the current window.
   # { key = "S", chars = "\u0002'", mods = "Command|Alt" },    # 跳转到对应的window
   { key = "P", chars = "\u0002p", mods = "Command" }, # 上一个window
   { key = "N", chars = "\u0002n", mods = "Command" }, # 下一个window

@@ -1,14 +1,28 @@
 {
   "mcpServers": {
+    "docker": {
+      "args": [
+        "docker-mcp"
+      ],
+      "autoApprove": [
+        "create-container",
+        "deploy-compose",
+        "get-logs",
+        "list-containers"
+      ],
+      "command": "uvx"
+    },
     "fetch": {
       "args": [
         "mcp-server-fetch"
       ],
-      "disabled": false,
-      "command": "uvx"
+      "autoApprove": [
+        "fetch"
+      ],
+      "command": "uvx",
+      "disabled": false
     },
     "filesystem": {
-      "command": "npx",
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
@@ -16,36 +30,43 @@
         "~/Privatespace",
         "~/.config/mcphub",
         "~/.config/nvim"
-      ]
+      ],
+      "autoApprove": [
+        "read_file",
+        "read_text_file",
+        "read_media_file",
+        "read_multiple_files",
+        "write_file",
+        "edit_file",
+        "create_directory",
+        "list_directory",
+        "list_directory_with_sizes",
+        "directory_tree",
+        "move_file",
+        "search_files",
+        "get_file_info",
+        "list_allowed_directories"
+      ],
+      "command": "npx"
     },
     "git": {
-      "command": "uvx",
       "args": [
         "mcp-server-git"
-      ]
-    },
-    "tavily-mcp": {
-      "disabled": false,
-      "command": "npx",
-      "env": {
-        "TAVILY_API_KEY": ""
-      },
-      "args": [
-        "-y",
-        "tavily-mcp@0.1.4"
       ],
-      "autoApprove": []
-    },
-    "sequential-thinking": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-sequential-thinking"
-      ]
-    },
-    "docker": {
-      "args": [
-        "docker-mcp"
+      "autoApprove": [
+        "git_status",
+        "git_diff_unstaged",
+        "git_diff_staged",
+        "git_diff",
+        "git_commit",
+        "git_add",
+        "git_reset",
+        "git_log",
+        "git_create_branch",
+        "git_checkout",
+        "git_show",
+        "git_init",
+        "git_branch"
       ],
       "command": "uvx"
     },
@@ -56,29 +77,96 @@
       ],
       "command": "npx"
     },
-    "mcp-server-commands": {
-      "command": "npx",
-      "args": [
-        "mcp-server-commands"
-      ]
-    },
     "jetbrains": {
-      "command": "npx",
       "args": [
         "-y",
         "@jetbrains/mcp-proxy"
-      ]
+      ],
+      "command": "npx"
+    },
+    "mcp-server-commands": {
+      "args": [
+        "mcp-server-commands"
+      ],
+      "autoApprove": [
+        "run_command"
+      ],
+      "command": "npx"
+    },
+    "sequential-thinking": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "autoApprove": [
+        "sequentialthinking"
+      ],
+      "command": "npx"
+    },
+    "tavily-mcp": {
+      "args": [
+        "-y",
+        "tavily-mcp@0.1.4"
+      ],
+      "autoApprove": [
+        "tavily-search",
+        "tavily-extract"
+      ],
+      "command": "npx",
+      "disabled": false,
+      "env": {
+        "TAVILY_API_KEY": ""
+      }
     },
     "todoist": {
-      "command": "npx",
       "args": [
         "-y",
         "@abhiz123/todoist-mcp-server"
       ],
+      "autoApprove": [
+        "todoist_create_task",
+        "todoist_get_tasks",
+        "todoist_update_task",
+        "todoist_delete_task",
+        "todoist_complete_task"
+      ],
+      "command": "npx",
       "env": {
         "TODOIST_API_TOKEN": ""
       }
+    },
+    "vectorcode": {
+      "autoApprove": [
+        "ls",
+        "query",
+        "vectorise",
+        "files_rm",
+        "files_ls"
+      ],
+      "command": "vectorcode-mcp-server",
+      "disabled": false
     }
   },
-  "nativeMCPServers": []
+  "nativeMCPServers": {
+    "mcphub": {
+      "autoApprove": [
+        "get_current_servers",
+        "toggle_mcp_server"
+      ]
+    },
+    "neovim": {
+      "autoApprove": [
+        "execute_lua",
+        "execute_command",
+        "read_file",
+        "move_item",
+        "read_multiple_files",
+        "delete_items",
+        "find_files",
+        "list_directory",
+        "write_file",
+        "edit_file"
+      ]
+    }
+  }
 }
