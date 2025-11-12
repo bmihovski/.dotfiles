@@ -7,11 +7,13 @@ IFS=','
 folders=($STOW_FOLDERS)
 unset IFS
 
-for folder in "${folders[@]}"
-do
+for folder in "${folders[@]}"; do
     echo "stow $folder"
     stow -D -t ~/ $folder
     stow -t ~/ $folder
+    if [[ $folder == "bin" ]]; then
+        chmod -R +x "$DOTFILES/$folder"
+    fi
 done
 
 popd
