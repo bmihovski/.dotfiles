@@ -40,7 +40,7 @@ for dir in "${dirs[@]}"; do
     elif [[ $1 == "decrypt" ]]; then
         find "$DOTFILES/$dir" -type f -exec ansible-vault decrypt --vault-password-file "$password_file" {} \;
         if [[ $dir == "bin" ]]; then
-            chmod +x -R "$DOTFILES/$dir"
+            chmod -R +x "$DOTFILES/$dir"
         fi
     else
         echo "Invalid argument: $1. Please provide encrypt or decrypt."

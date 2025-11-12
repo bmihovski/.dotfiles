@@ -4,3 +4,7 @@ docker/.docker/config.json
 kube/.kube/cache
 kube/.kube/kubens
 kube/.kube/kubectx
+bin/.local/bin/hererocks
+bin/.local/bin/vectorcode
+bin/.local/bin/vectorcode-mcp-server
+bin/.local/bin/vectorcode-server
