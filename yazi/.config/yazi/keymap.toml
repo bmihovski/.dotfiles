@@ -5,6 +5,14 @@ prepend_keymap = [
     "c",
     "m",
   ], run = "plugin chmod", desc = "Chmod on selected files" },
+  { on   = [ "c", "a", "a", ],
+    run  = "plugin compress",
+    desc = "Archive selected files"
+  },
+  { on   = [ "c", "a", "p",],
+    run  = "plugin compress -p",
+    desc = "Archive selected files (password)"
+  },
   # toggle full screen
   { on = [
     "T",

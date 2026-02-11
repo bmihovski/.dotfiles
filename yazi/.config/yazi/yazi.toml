@@ -18,8 +18,8 @@ max_height = 1200
 wrap = "yes"
 
 [[mgr.prepend_keymap]]
-on   = [ "g", "i" ]
-run  = "plugin lazygit"
+on = ["g", "i"]
+run = "plugin lazygit"
 desc = "run lazygit"
 
 append_fetchers = [
@@ -54,4 +54,6 @@ prepend_previewers = [
   { name = "*.rst", run = "rich-preview" },
   { name = "*.ipynb", run = "rich-preview" },
   { name = "*.json", run = "rich-preview" },
+  { name = "*.docx", run = "docx-preview" },
+  { name = "*.doc", run = "doc-preview" },
 ]
