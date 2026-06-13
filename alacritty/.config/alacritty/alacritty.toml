@@ -47,7 +47,7 @@ save_to_clipboard = true
 
 [terminal]
 osc52 = "CopyPaste"
-shell.program = "/opt/homebrew/bin/zsh"
+shell.program = "/home/linuxbrew/.linuxbrew/bin/zsh"
 shell.args = [
   "-l",
   "-c",
