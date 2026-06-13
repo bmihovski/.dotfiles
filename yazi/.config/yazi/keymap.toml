@@ -13,6 +13,7 @@ prepend_keymap = [
     run  = "plugin compress -p",
     desc = "Archive selected files (password)"
   },
+  { on = ["g", "i"], run = "plugin lazygit", desc = "run lazygit" },
   # toggle full screen
   { on = [
     "T",

@@ -1,0 +1,117 @@
+# Copyright 2025 Ian Lewis
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+plugin:
+  - id: "@textlint/textlint-plugin-text"
+  - id: "@textlint/textlint-plugin-markdown"
+filters:
+  comments: true
+rules:
+  # Expression of Text
+  alex: true
+  "@textlint-rule/no-duplicate-abbr": true
+  no-start-duplicated-conjunction:
+    max: 2
+  "@textlint-rule/textlint-rule-no-unmatched-pair": true
+  rousseau:
+    ignoreTypes:
+      - "sentence:start"
+      - "sentence:end"
+      - "sentence:uppercase"
+  write-good: true
+
+  # Writing style
+  first-sentence-length:
+    max: 140
+  sentence-length:
+    max: 280
+  max-comma:
+    max: 4
+
+  # Proofreading
+  date-weekday-mismatch: true
+  no-exclamation-question-mark: true
+
+  # Check to chars for invalid code points
+  "@textlint-rule/no-invalid-control-character": true
+  no-zero-width-spaces: true
+  spelling:
+    language: "en"
+    skipPatterns:
+      # Names
+      - "/\\bArmin\\b/g"
+      - "/\\bRonacher\\b/g"
+
+      # Terminology
+      - "/\\bAutocommands\\b/g" # Neovim/Vim autocommands
+      - "/\\bGhostty\\b/g" # terminal emulator
+      - "/\\bHomebrew\\b/g"
+      - "/\\bLSP\\b/g"
+      - "/\\bLua\\b/g"
+      - "/\\bNeovim\\b/g"
+      - "/\\bNixOS\\b/g"
+      - "/\\bTreesitter\\b/g"
+      - "/\\bSDK\\b/g"
+      - "/\\bXDG\\b/g" # X Desktop Group
+      - "/\\be2e\\b/g"
+      - "/\\bkubectl\\b/g" # Kubernetes CLI
+      - "/\\bmacOS\\b/g"
+      - "/\\b[Cc]hecksums?\\b/g" # e.g. file checksums
+      - "/\\b[Dd]otfiles\\b/g"
+      - "/\\b[Ff]olke\\b/g"
+      - "/\\b[Ff]iletypes?\\b/g"
+      - "/\\b[Nn]amespaces?\\b/g"
+      - "/\\b[Rr]emappings?\\b/g"
+      - "/\\b[Ss]ubmodules?\\b/g"
+      - "/\\b[Ss]ymlinks?\\b/g" # symbolic links
+      - "/\\b[Tt]mux\\b/g"
+      - "/\\b[Uu]nstage\\b/g" # e.g. unstage from git index
+
+      - "/\\bAMD64\\b/g"
+      - "/\\bARM64\\b/g"
+      - "/\\b(CHANGELOG|Changelog)\\b/g"
+      - "/\\bCODEOWNER\\b/g"
+      - "/\\bCLA\\b/g"
+      - "/\\bCLI\\b/g"
+      - "/\\bCVSS\\b/g"
+      - "/\\bDCO\\b/g"
+      - "/\\bPRs?\\b/g"
+      - "/\\bUI\\b/g"
+      - "/\\bYAML\\b/g"
+      - "/\\bCodeQL\\b/g"
+      - "/\\bDependabot\\b/g"
+      - "/\\bHomebrew\\b/g"
+      - "/\\bJavaScript\\b/g"
+      - "/\\bMakefile\\b/g"
+      - "/\\bNode.js\\b/g"
+      - "/\\bOpenSSF\\b/g"
+      - "/\\bTODOs?\\b/g"
+      - "/\\be2e\\b/g"
+      - "/\\bmacOS\\b/g"
+      - "/\\bx86-64\\b/g"
+      - "/\\b[Ff]ormatters?\\b/g"
+      - "/\\b[Ll]inters?\\b/g"
+      - "/\\b[Pp]ositivity\\b/g"
+      - "/\\b[Pp]re\\b/g"
+      - "/\\b[Rr]ebase\\b/g"
+      - "/\\b[Rr]eproducibility\\b/g"
+      - "/\\b[Rr]ulesets?\\b/g"
+      - "/\\b[Rr]untimes?\\b/g"
+      - "/\\b[Ss]exualized\\b/g"
+      - "/\\b[Ss]ocio-economic\\b/g"
+      - "/\\b[Uu]serspace\\b/g"
+      - "/\\b[Vv]endored\\b/g"
+      - "/\\b[Vv]irtualenv\\b/g"
+      - "/\\bv?[0-9]+\\b/g"
+      - ":white_check_mark:"

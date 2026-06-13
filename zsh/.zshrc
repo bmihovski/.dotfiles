@@ -113,3 +113,9 @@ compinit
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/boyanmihovski/.lmstudio/bin"
 # End of LM Studio CLI section
+
+# Added by Antigravity
+export PATH="/Users/boyanmihovski/.antigravity/antigravity/bin:$PATH"
+
+# Added by Antigravity IDE
+export PATH="/Users/boyanmihovski/.antigravity-ide/antigravity-ide/bin:$PATH"

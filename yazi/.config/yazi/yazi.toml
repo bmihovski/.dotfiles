@@ -17,10 +17,6 @@ max_width = 2000
 max_height = 1200
 wrap = "yes"
 
-[[mgr.prepend_keymap]]
-on = ["g", "i"]
-run = "plugin lazygit"
-desc = "run lazygit"
 
 append_fetchers = [
   { id = "simple-tag", name = "*", run = "simple-tag" },

@@ -20,3 +20,7 @@ bin/.local/bin/hererocks
 /yazi/.config/yazi/flavors/catppuccin-mocha.yazi
 /yazi/.config/yazi/plugins
 /yazi/.config/yazi/package.toml
+/aws/.aws/amazonq
+/bin/.local/bin/jan
+/bin/.local/bin/ocx
+/bin/.local/bin/anki_deck_from_text

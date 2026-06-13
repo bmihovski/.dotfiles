@@ -1,4 +1,5 @@
 export XDG_CONFIG_HOME=$HOME/.config
+
 VIM="nvim"
 export HOMEBREW_PREFIX="$(/opt/homebrew/bin/brew --prefix)"
 eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
@@ -32,8 +33,8 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 setopt auto_cd
 autoload -Uz compinit && compinit
 # Ensure tmux uses 256 colors
-export TERM="xterm-256color"
-#export TERM="alacritty"
+# export TERM="xterm-256color"
+export TERM="alacritty"
 
 # Fix for macOS terminal colors
 export CLICOLOR=1
