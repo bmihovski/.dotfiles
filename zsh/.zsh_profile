@@ -1,0 +1,45 @@
+export XDG_CONFIG_HOME=$HOME/.config
+
+VIM="nvim"
+export HOMEBREW_PREFIX="$(/opt/homebrew/bin/brew --prefix)"
+eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
+source $HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh
+source $HOMEBREW_PREFIX/opt/fzf/shell/completion.zsh
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.cargo/bin" ] ; then
+    PATH="$HOME/.cargo/bin:$PATH"
+fi
+export PYTHONBREAKPOINT="pudb.set_trace"
+export GIT_EDITOR=$VIM
+
+export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass.txt
+# Where should I put you?
+bindkey -s ^F "tmux-sessionizer\n"
+eval "$(zoxide init zsh --cmd cd)"
+eval "$(starship init zsh)"
+eval "$(atuin init zsh)"
+source <(fzf --zsh)
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+setopt auto_cd
+autoload -Uz compinit && compinit
+# Ensure tmux uses 256 colors
+# export TERM="xterm-256color"
+export TERM="alacritty"
+
+# Fix for macOS terminal colors
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+# Source .bash_aliases if it exists
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi

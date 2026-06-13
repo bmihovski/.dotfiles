@@ -1,30 +1,29 @@
-import = ["~/.config/alacritty/catppuccin-mocha.toml"]
 
 [env]
 TERM = "xterm-256color"
-PATH = "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 [font]
-size = 12.7
+size = 20
+# size = 16
 
 # [font.bold]
 # family = "JetBrainsMono Nerd Font"
 # family = "MesloLGS NF"
-normal.family = "OpenDyslexicMono Nerd Font"
+normal.family = "OpenDyslexicM Nerd Font Mono"
 # style = "Bold"
 
 # [font.bold_italic]
 # family = "JetBrainsMono Nerd Font"
 # family = "MesloLGS NF"
-bold.family = "OpenDyslexicMono Nerd Font"
+bold.family = "OpenDyslexicM Nerd Font Mono"
 # family = "MesloLGS Nerd Font Mono"
 # style = "Bold Italic"
 
 # [font.italic]
 # family = "JetBrainsMono Nerd Font"
 # family = "MesloLGS NF"
-italic.family = "OpenDyslexicMono Nerd"
-bold_italic.family = "OpenDyslexicMono Nerd Font"
+italic.family = "OpenDyslexicM Nerd Font Mono"
+bold_italic.family = "OpenDyslexicM Nerd Font Mono"
 # style = "Italic"
 
 # [font.normal]
@@ -34,15 +33,22 @@ bold_italic.family = "OpenDyslexicMono Nerd Font"
 # style = "Regular"
 
 [window]
-startup_mode = "Maximized"
+startup_mode = "SimpleFullscreen"
+padding = { x = 5, y = 5 }
+blur = true
+decorations = "buttonless"
+dynamic_padding = false
+opacity = 0.9
+option_as_alt = "OnlyLeft"
 
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 save_to_clipboard = true
 
-[shell]
-program = "/usr/bin/bash" # Use the command `whereis bash` or `which bash` to verify the location of your bash executable
-args = [
+[terminal]
+osc52 = "CopyPaste"
+shell.program = "/opt/homebrew/bin/zsh"
+shell.args = [
   "-l",
   "-c",
   "tmux has-session 2>/dev/null && tmux -u attach || tmux -u new",
@@ -77,7 +83,7 @@ blink_interval = 500
 hide_when_typing = true
 
 [[hints.enabled]]
-command = "xdg-open"
+command = "open"
 hyperlinks = true
 post_processing = true
 regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
@@ -95,3 +101,69 @@ post_processing = true
 regex = "go/[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
 mouse = { enabled = true, mods = "None" }
 
+[general]
+import = ["~/.config/alacritty/catppuccin-mocha.toml"]
+
+[keyboard]
+bindings = [
+  { key = "Left", chars = "\u0001", mods = "Command" },      # 移动到行前
+  { key = "Right", chars = "\u0005", mods = "Command" },     # 移动到行后
+  { key = "Backspace", chars = "\u0015", mods = "Command" }, # 移动到行后
+  { key = "Left", chars = "\u001B\u0062", mods = "Alt" },    # 移动到单词前
+  { key = "Right", chars = "\u001B\u0066", mods = "Alt" },   # 移动到单词后
+
+  # window
+  { key = "Minus", mods = "Command", action = "DecreaseFontSize" },
+  { key = "Plus", mods = "Command", action = "IncreaseFontSize" },
+  { key = "Key0", mods = "Command", action = "ResetFontSize" },
+  { key = "Q", mods = "Command", action = "Quit" },                 # 推出
+  { key = "Return", mods = "Alt", action = "ToggleFullscreen" },    # 全屏 ToggleSimpleFullscreen
+
+  # tmux
+  { key = "B", chars = "\u0002", mods = "Command" }, # 前缀键
+
+  { chars = "\u0002s", key = "A", mods = "Alt" }, # 选择一个session
+  { key = "R", chars = "\u0002$", mods = "Alt" }, # Rename the current session..
+  { key = "P", chars = "\u0002(", mods = "Alt" }, # 上一个session
+  { key = "N", chars = "\u0002)", mods = "Alt" }, # 下一个session
+  # { chars = "\u0002f", key = "F", mods = "Alt" }, # 查找session
+
+  { chars = "\u0002c", key = "T", mods = "Command" },
+  { key = "Key7", chars = "\u0002&", mods = "Command|Alt" }, # Kill the current window.
+  # { key = "R", chars = "\u0002,", mods = "Command|Shift" },  # Rename the current window.
+  # { key = "S", chars = "\u0002'", mods = "Command|Alt" },    # 跳转到对应的window
+  { key = "P", chars = "\u0002p", mods = "Command" }, # 上一个window
+  { key = "N", chars = "\u0002n", mods = "Command" }, # 下一个window
+  { chars = "\u00021", key = "Key1", mods = "Alt" },
+  { chars = "\u00022", key = "Key2", mods = "Alt" },
+  { chars = "\u00023", key = "Key3", mods = "Alt" },
+  { chars = "\u00024", key = "Key4", mods = "Alt" },
+  { chars = "\u00025", key = "Key5", mods = "Alt" },
+  { chars = "\u00026", key = "Key6", mods = "Alt" },
+  { chars = "\u00027", key = "Key7", mods = "Alt" },
+  { chars = "\u00028", key = "Key8", mods = "Alt" },
+  { chars = "\u00029", key = "Key9", mods = "Alt" },
+
+  { key = "O", chars = "\u0002\u0008", mods = "Command|Shift" }, # 所有窗格向前移动一个位置，第一个窗格变成最后一个窗格。
+  { key = "O", chars = "\u0002\u000f", mods = "Command" },       # 所有窗格向后移动一个位置，最后一个窗格变成第一个窗格。
+  { key = "D", chars = "\u0002\"", mods = "Command|Shift" },     # 上下分割
+  { key = "D", chars = "\u0002%", mods = "Command" },            # 左右分割
+  { key = "T", chars = "\u0002!", mods = "Command|Shift" },      # 当前的pane另起一个window
+  { chars = "\u0002;", key = "LBracket", mods = "Command" },     # 移至先前活动的pane。
+  { chars = "\u0002o", key = "RBracket", mods = "Command" },     # 移至下一个pane
+  { key = "Z", chars = "\u0002z", mods = "Command" },            # 放大当前的pane
+  { chars = "\u0002x", key = "W", mods = "Command" },            # Kill the current pane.
+  { chars = "\u0002H", key = "H", mods = "Command|Shift" },
+  { chars = "\u0002J", key = "J", mods = "Command|Shift" },
+  { chars = "\u0002K", key = "K", mods = "Command|Shift" },
+  { chars = "\u0002L", key = "L", mods = "Command|Shift" },
+  { key = "F", chars = "\u0002[", mods = "Command" },            # copy mod
+
+  { chars = "\u0002q", key = "Q", mods = "Alt" },            # q 简要显示窗格索引。
+  { key = "Key3", chars = "\u0002#", mods = "Command|Alt" }, # 展现所有buffers
+  { key = "Back", chars = "\u0002-", mods = "Command|Alt" }, # 删除最近复制的文本缓冲区。
+  { key = "V", chars = "\u0002=", mods = "Alt" },            # 显示全部粘贴版
+  { key = "End", chars = "\u0002?", mods = "Command|Alt" },  # 帮助
+  { key = "T", chars = "\u0002t", mods = "Alt" },            # Show the time.
+
+]
