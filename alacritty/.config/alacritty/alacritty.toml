@@ -50,7 +50,7 @@ osc52 = "CopyPaste"
 shell.program = "/home/linuxbrew/.linuxbrew/bin/zsh"
 shell.args = [
   "-l",
-  "-c",
+  "-ic",
   "tmux has-session 2>/dev/null && tmux -u attach || tmux -u new",
 ]
 
