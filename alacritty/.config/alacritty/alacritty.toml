@@ -1,3 +1,4 @@
+import = ["~/.config/alacritty/catppuccin-mocha.toml"]
 
 [env]
 TERM = "xterm-256color"
@@ -47,8 +48,9 @@ save_to_clipboard = true
 
 [terminal]
 osc52 = "CopyPaste"
-shell.program = "/home/linuxbrew/.linuxbrew/bin/zsh"
-shell.args = [
+[shell]
+program = "/home/linuxbrew/.linuxbrew/bin/zsh"
+args = [
   "-l",
   "-ic",
   "tmux has-session 2>/dev/null && tmux -u attach || tmux -u new",
@@ -101,8 +103,6 @@ post_processing = true
 regex = "go/[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
 mouse = { enabled = true, mods = "None" }
 
-[general]
-import = ["~/.config/alacritty/catppuccin-mocha.toml"]
 
 [keyboard]
 bindings = [
