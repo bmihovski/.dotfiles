@@ -9,12 +9,12 @@ fi
 # Check if an argument is provided
 if [[ -z $1 ]]; then
     echo "Please provide an argument: encrypt or decrypt"
-    exit 1
 fi
+    exit 1
 
 # Directories to process
 if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS=".vscode,aws,bash,bin,ssh,mcphub"
+    STOW_FOLDERS=".vscode,aws,bash,bin,jan,lmstudio,ssh,mcphub"
 fi
 
 # Convert comma-separated string to array
