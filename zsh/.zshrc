@@ -119,3 +119,6 @@ export PATH="/Users/boyanmihovski/.antigravity/antigravity/bin:$PATH"
 
 # Added by Antigravity IDE
 export PATH="/Users/boyanmihovski/.antigravity-ide/antigravity-ide/bin:$PATH"
+
+# Added by Antigravity IDE
+export PATH="/Users/boyanmihovski/.antigravity-ide/antigravity-ide/bin:$PATH"
