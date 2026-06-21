@@ -9,8 +9,8 @@ fi
 # Check if an argument is provided
 if [[ -z $1 ]]; then
     echo "Please provide an argument: encrypt or decrypt"
-fi
     exit 1
+fi
 
 # Directories to process
 if [[ -z $STOW_FOLDERS ]]; then
