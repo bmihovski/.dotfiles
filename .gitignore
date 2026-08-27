@@ -25,3 +25,5 @@ bin/.local/bin/hererocks
 /bin/.local/bin/ocx
 /bin/.local/bin/anki_deck_from_text
 /bin/.local/bin/claude
+/ssh/.ssh/known_hosts
+/ssh/.ssh/known_hosts.old
